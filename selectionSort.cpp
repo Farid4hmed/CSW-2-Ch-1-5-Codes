@@ -3,19 +3,20 @@
 using namespace std;
 
 void selectSort(int arr[], int n){
- 	int minidx = 0;
- 	for(int i=0; i<n-1; i++){
-	int currMin = INT_MAX;
-	int Idx;
-	for(int j=0; j<n; j++){
-	if(currMin > arr[j]){
-	currMin = arr[j];
-	Idx = j;
- 	}
-	}
-	arr[minidx++] = currMin;
-	arr[Idx] = INT_MAX;
-	}
+    
+    for(int i = 0; i < n; i++){
+        int min_ind = i;
+        
+        for(int j = i + 1; j < n; j++){
+            if(arr[j] < arr[min_ind]){
+                min_ind = j;
+            }
+        }
+        
+        swap(arr[i], arr[min_ind]);
+    }
+    
+    
 }
 
 
